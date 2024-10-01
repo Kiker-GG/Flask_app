@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Flask App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Flask!</h1>
+
+    {% if greeting %}
+        <p>{{ greeting }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <div>
+            {{ form.hidden_tag() }}
+            {{ form.name.label }} {{ form.name(size=20) }}
+            &nbsp;
+            {{ form.age.label }} {{ form.age(size=20) }}
+            &nbsp;
+            {{ form.city.label }} {{ form.city(size=20) }}
+            &nbsp;
+            {{ form.submit() }}
+        </div>
+    </form>
+    <form method="POST">
+        <div>
+            <button type="submit"  name="button_iris" class="btn btn-secondary">Go to iris</button>
+            <button type="submit"  name="button_wine" class="btn btn-secondary">Go to wine</button>
+            <button type="submit"  name="button_res" class="btn btn-secondary">Go to results</button>
+        </div>
+    </form>
+
+    <div id="dashboard">
+        <!-- Здесь будут интерактивные графики -->
+        {{ plot_div|safe }}
+    </div>
+
+</body>
+</html>

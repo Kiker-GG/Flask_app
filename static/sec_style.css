@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+    height: 60px;
+}
+
+input, button {
+    margin-top: 20px;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+
+.table-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+  
+.table-container table {
+    width: 100%;
+    height: 100%;
+}
+/* div{
+    margin-top: 80px;
+} */

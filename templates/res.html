@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Analytic</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Results Analytic</h1>
+
+    {{html_table|safe}}
+    <form method="POST">
+        <div>
+            <button type="submit"  name="button_sort_by_accurasy_ascending" class="btn btn-primary">Sort by accurasy ascending</button>
+            <button type="submit"  name="button_sort_by_accurasy_descending" class="btn btn-primary">Sort by accurasy descending</button>
+        </div>
+
+        <button type="submit"  name="back" class="btn btn-primary">Back to home page</button>
+    </form>
+
+    
+</body>
+</html>

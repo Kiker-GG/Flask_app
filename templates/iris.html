@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Dataset Analytics</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sec_style.css') }}">
+</head>
+<body>
+    <h1>Iris Dataset Analytics</h1>
+
+    <form method="POST">
+        <button type="submit" class="btn btn-secondary">Compare Classification Models</button>
+
+        <button type="submit"  name="back" class="btn btn-primary">Back to home page</button>
+    </form>
+
+    <div id="dashboard">
+        <!-- Здесь будут интерактивные графики -->
+        {{ plot_div|safe }}
+    </div>
+
+    {% if accuracy_results %}
+        <h2>Model Accuracy Results:</h2>
+        <ul>
+            {% for model, accuracy in accuracy_results.items() %}
+                <li>{{ model }}: {{ accuracy*100 }}%</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

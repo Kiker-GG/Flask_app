@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Dataset Analytics</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sec_style.css') }}">
+</head>
+<body>
+    <h1>Wine Dataset Analytics</h1>
+
+    <form method="POST">
+        <button type="submit" class="btn btn-secondary">Compare Classification Models</button>
+        <button type="submit"  name="back" class="btn btn-primary">Back to home page</button>
+    </form>
+
+    {{ html_table|safe }}   
+
+    <div id="dashboard">
+        {{ plot_div|safe }}
+    </div>
+</body>
+</html>
